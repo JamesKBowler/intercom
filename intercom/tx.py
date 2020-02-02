@@ -21,7 +21,7 @@
 # SOFTWARE.
 
 
-from intercom.base import BaseInterprocessSocket
+from intercom.base import BaseIntercom
 
 import socket
 import json
@@ -29,7 +29,7 @@ import struct
 import uuid
 
 
-class SocketTransmit(BaseInterprocessSocket):
+class SocketTransmit(BaseIntercom):
     def __init__(
         self, identifier='tx', should_print=True
     ):
