@@ -21,7 +21,7 @@
 # SOFTWARE.
 
 
-from intercom.base import BaseInterprocessSocket
+from intercom.base import BaseIntercom
 
 from collections import deque
 from threading import Thread
@@ -34,7 +34,7 @@ import uuid
 import random
 
 
-class SocketReceive(BaseInterprocessSocket):
+class SocketReceive(BaseIntercom):
     """
     A class representing a none blocking SocketReceive.
     It contains an id for tracking with the ability
