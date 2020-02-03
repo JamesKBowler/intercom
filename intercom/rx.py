@@ -179,7 +179,6 @@ class SocketReceive(BaseIntercom):
                 if not msg:
                     continue
                 call_back(msg)
-            self.callback_running = False
             log_message = "Notification: {}: {}, callback stopppe".format(
                 self.__class__.__name__, self.id
             )
@@ -189,6 +188,7 @@ class SocketReceive(BaseIntercom):
         self._buffer = deque(maxlen=self.queue_len)
 
     def close_session(self):
+        self.callback_running = False
         try:
             self._stream.shutdown(socket.SHUT_WR)
         except OSError:
